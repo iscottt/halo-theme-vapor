@@ -183,11 +183,20 @@
       </th:block>
     </div>
   </div>
+  <div th:if="${pluginFinder.available('editor-hyperlink-card')}" id="enable-hyperlink" style="display: none"></div>
 </header>
 <script>
   function doSearch(keyword) {
     location.href = `/search?keyword=${keyword}`;
   }
+
+  const enable_hyperlink = document.getElementById("enable-hyperlink");
+  if (enable_hyperlink) {
+    localStorage.setItem("enable_hyperlink", "true");
+  } else {
+    localStorage.setItem("enable_hyperlink", "false");
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     async function initImgColor() {
       const targets = document.querySelectorAll(".post-card");
@@ -241,4 +250,6 @@
     initImgColor();
     updateActiveMenu();
   });
+
+  //页面加载完毕后加载
 </script>

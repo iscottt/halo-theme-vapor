@@ -19,6 +19,9 @@ export function replaceLinksInElement(container: HTMLElement | null) {
   if (!links || links.length === 0) {
     return;
   }
+
+  const is_new_link_style = localStorage.getItem("enable_hyperlink") === "true" ? true : false;
+
   links.forEach((link) => {
     try {
       const href = link.href;
@@ -30,7 +33,7 @@ export function replaceLinksInElement(container: HTMLElement | null) {
       if (!href || href === "#" || href === "javascript:void(0)") {
         return;
       }
-      if (className.includes("old-link-style")) {
+      if (!is_new_link_style) {
         // 从URL提取域名用于favicon
         linkStyleRender(href, target, text, link);
       } else {
