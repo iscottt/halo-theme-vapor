@@ -25,6 +25,15 @@ Vapor是一个简约风格的博客主题
 ## 📖 主题使用文档
 - [木木笔记](http://localhost:3000/docs/vapor/guide/)
 
+## 📖 Markdown编辑器中使用 编辑器超链接卡片 插件
+
+```markdown
+[三禾木木#regular](https://halo.scott-studio.cn)
+[三禾木木#small](https://halo.scott-studio.cn)
+[三禾木木#grid](https://halo.scott-studio.cn)
+[三禾木木](https://halo.scott-studio.cn)
+```
+
 ## 🔌 插件依赖
 
 - THYUU 区块 [plugin-thyuu-embed](https://www.halo.run/store/apps/app-lKYuv)
