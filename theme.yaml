@@ -5,7 +5,7 @@ metadata:
 spec:
   displayName: Vapor
   author:
-    name: SCOTT Studio
+    name: 三禾木木
     website: https://halo.scott-studio.cn
   description: 一个极简风格的Halo主题
   logo: "/themes/halo-theme-vapor/assets/imgs/vapor.png"
@@ -14,7 +14,7 @@ spec:
   issues: https://github.com/iscottt/halo-theme-vapor/issues
   settingName: "theme-vapor-setting"
   configMapName: "theme-vapor-setting-configMap"
-  version: "1.1.7"
+  version: "1.1.8"
   requires: ">=2.0.0"
   license:
     - name: "Apache License 2.0"
