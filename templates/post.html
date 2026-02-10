@@ -279,10 +279,13 @@
 
     /**
      * 给img增加一些装饰
+     * 修改说明：将选择器从 ".prose p>img, .prose li>img" 改为 ".prose img"
+     * 这样可以识别 <figure>、<div> 等标签内的图片
      */
-    document.querySelectorAll(".prose p>img, .prose li>img").forEach((el) => {
+    document.querySelectorAll(".prose img").forEach((el) => {
+      // 排除已经被处理过的图片
       if (!el.getAttribute("data-fancybox")) {
-        const classes = el.class;
+        const classes = el.getAttribute("class") || ""; // 修复 el.class 获取不到的问题
         el.setAttribute(
           "class",
           "relative z-20 dark:brightness-75 dark:transition-[filter] rounded-xl dark:hover:brightness-100 rounded-xl object-top object-cover w-full " +
@@ -293,15 +296,6 @@
         wrapper.setAttribute("class", "rounded-2xl bg-zinc-100 p-2 dark:bg-zinc-800 mb-4");
         el.parentNode.insertBefore(wrapper, el);
         wrapper.appendChild(el);
-        const altText = el.getAttribute("alt");
-        if (!altText) return;
-        const span = document.createElement("span");
-        span.innerText = altText;
-        span.setAttribute(
-          "class",
-          "flex w-full mt-1.5 items-center justify-center text-center text-sm font-medium text-zinc-500 dark:text-zinc-400"
-        );
-        el.parentNode.appendChild(span);
       }
     });
   });
