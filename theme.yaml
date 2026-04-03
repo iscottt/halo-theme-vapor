@@ -14,7 +14,7 @@ spec:
   issues: https://github.com/iscottt/halo-theme-vapor/issues
   settingName: "theme-vapor-setting"
   configMapName: "theme-vapor-setting-configMap"
-  version: "1.1.8"
+  version: "1.1.9"
   requires: ">=2.0.0"
   license:
     - name: "Apache License 2.0"
